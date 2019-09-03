@@ -5,3 +5,4 @@
 - [x] applied for futuresystems account
 - [x] applied for chameleoncloud account
 - [x] made sure python was up to date
+- [ ] :o2: learn markdown

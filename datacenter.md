@@ -3,6 +3,6 @@ I decided to find information about the Google data center in Council Bluffs, Io
 One thing I thought was interesting was Google's outreach to the community in Council Bluffs since they built the data center there. The Google page for the site mentions that Google has awarded $2 million to local schools and nonprofits, as well as creating a free WiFi network for everyone in the area. Of course these are probably part of some agreement with the city and Google to benefit Google on breaks, but I found it interesting nevertheless
 
 Sources:
-*https://www.google.com/about/datacenters/inside/locations/council-bluffs/
-*https://www.google.com/about/datacenters/efficiency/internal/
-*https://www.schneider-electric.com/en/work/solutions/system/s1/data-center-and-network-systems/trade-off-tools/data-center-carbon-footprint-comparison-calculator/
+* https://www.google.com/about/datacenters/inside/locations/council-bluffs/
+* https://www.google.com/about/datacenters/efficiency/internal/
+* https://www.schneider-electric.com/en/work/solutions/system/s1/data-center-and-network-systems/trade-off-tools/data-center-carbon-footprint-comparison-calculator/

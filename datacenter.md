@@ -39,3 +39,6 @@ On February 28th 2017, the AWS data center in northern Virginia experienced a se
 As for the impact it had, obviously there were a large number of services that went down with the server. The Wall Street Journal reported that the total outage cost S&P 500 companies $150 million dollars in lost revenue, as many retailers saw their website performance drop. For me personally, I work with campus IT and was luckily enough to working at the time. While IU hosts all of its own services locally, it just so happened that our Canvas instance was hosted on that AWS server. So Canvas was down for roughly four hours, and I witnessed firsthand the chaos that it caused. We had students freaking out they couldn't submit assignments, professors complaining they could administer quizzes/tests and so on. The graph below shows number of customers we had during that day. It's pretty easy to look at that and see when we had the outage.
 
 ![AWS Outage](https://i.imgur.com/1pB8nmn.png)
+
+Source:
+ * https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo

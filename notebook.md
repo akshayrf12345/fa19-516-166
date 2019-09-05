@@ -6,4 +6,4 @@
 - [x] applied for chameleoncloud account
 - [x] made sure python was up to date
 - [x] :o2: learn markdown
-* Learned!
+    * Learned!

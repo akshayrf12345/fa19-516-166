@@ -44,10 +44,10 @@ in those respective states. The two farms together will be composed of
 1.6 million solar panels. Some other data centers that use solar power
 are:
 
-  * Facebook's Henrico County data center in Virginia (under construction)
-  * Intel's New Mexico data center
-  * Apple's North Carolina and Nevada data centers
-  * Amazon also has six solar farms in Virginia to power its data centers
+* Facebook's Henrico County data center in Virginia (under construction)
+* Intel's New Mexico data center
+* Apple's North Carolina and Nevada data centers
+* Amazon also has six solar farms in Virginia to power its data centers
   
 ## E.Datacenter.5
 
@@ -68,10 +68,11 @@ in renewable energy by the Solar Industries Energy Association, having
 the second most active solar panel installations (behind Apple).
 
 Sources:
-  * <https://aws.amazon.com/about-aws/sustainability/>
-  * <https://www.businesswire.com/news/home/20190801005260/en/>
-  * <https://www.businesswire.com/news/home/20190408005471/en/Amazon-Announces-New-Renewable-Energy-Projects-Support>
-  * <https://www.cnbc.com/2019/08/02/amazon-announces-new-renewable-energy-projects-in-the-us-and-ireland.html>
+
+* <https://aws.amazon.com/about-aws/sustainability/>
+* <https://www.businesswire.com/news/home/20190801005260/en/>
+* <https://www.businesswire.com/news/home/20190408005471/en/Amazon-Announces-New-Renewable-Energy-Projects-Support>
+* <https://www.cnbc.com/2019/08/02/amazon-announces-new-renewable-energy-projects-in-the-us-and-ireland.html>
   
 ## E.Datacenter.8
 

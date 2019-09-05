@@ -1,13 +1,11 @@
-
 # DataCenter
+
+:o2: d not use the word "I"
 
 ## E.Datacenter.2.b
 
 I decided to find information about the Google data center in Council Bluffs, Iowa. There are two Google data centers there, the first of which opened in 2008, and the second announced in 2012. I focused on the second data center, though the PUE is roughly the same for both of them (1.09 vs 1.11). In this area of the country, the dollar per kWh is $.09. I was not able to find the IT workload of the center, but I estimated it to be around 9000 kW based off of comparisons to other data centers. When all of this is put into the CO2 calculator hosted by Schneider Electric, the annual electricity cost is $7.86 million and the total CO2 output is 77,429 tons (17070 equivalent in cars). 
 
-:o2: please can you put the assignment labels as `##` headlines
-
-:o2: d not use the word "I"
 
 I decided to find information about the Google data center in Council
 Bluffs, Iowa. There are two Google data centers there, the first of

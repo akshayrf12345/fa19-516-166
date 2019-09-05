@@ -70,10 +70,10 @@ in renewable energy by the Solar Industries Energy Association, having
 the second most active solar panel installations (behind Apple).
 
 Sources:
-  * https://aws.amazon.com/about-aws/sustainability/
-  * https://www.businesswire.com/news/home/20190801005260/en/
-  * https://www.businesswire.com/news/home/20190408005471/en/Amazon-Announces-New-Renewable-Energy-Projects-Support
-  * https://www.cnbc.com/2019/08/02/amazon-announces-new-renewable-energy-projects-in-the-us-and-ireland.html
+  * <https://aws.amazon.com/about-aws/sustainability/>
+  * <https://www.businesswire.com/news/home/20190801005260/en/>
+  * <https://www.businesswire.com/news/home/20190408005471/en/Amazon-Announces-New-Renewable-Energy-Projects-Support>
+  * <https://www.cnbc.com/2019/08/02/amazon-announces-new-renewable-energy-projects-in-the-us-and-ireland.html>
   
 ## E.Datacenter.8
 

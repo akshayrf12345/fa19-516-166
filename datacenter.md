@@ -6,7 +6,7 @@
 
 There are two Google data centers in Council Bluffs, Iowa, the first of which opened in 2008, and the second announced in 2012.
 Both data centers have roughly the same PUE (1.09 vs 1.11), though the following calculations are for the second one. In this area
-of the country, the dollar per kWh is $.09. Th IT workload of the center was not available online, but it was estimated to be
+of the country, the dollar per kWh is $.09. The IT workload of the center was not available online, but it was estimated to be
 around 9000 kW based off of comparisons to other data centers. When all of this is put into the CO2 calculator hosted by Schneider
 Electric, the annual electricity cost is $7.86 million and the total CO2 output is 77,429 tons (17070 equivalent in cars). 
 

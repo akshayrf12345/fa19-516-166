@@ -4,7 +4,11 @@
 
 ## E.Datacenter.2.b
 
-There are two Google data centers in Council Bluffs, Iowa, the first of which opened in 2008, and the second announced in 2012. Both data centers have roughly the same PUE (1.09 vs 1.11), though the following calculations are for the second one. In this area of the country, the dollar per kWh is $.09. Th IT workload of the center was not available online, but it was estimated to be around 9000 kW based off of comparisons to other data centers. When all of this is put into the CO2 calculator hosted by Schneider Electric, the annual electricity cost is $7.86 million and the total CO2 output is 77,429 tons (17070 equivalent in cars). 
+There are two Google data centers in Council Bluffs, Iowa, the first of which opened in 2008, and the second announced in 2012.
+Both data centers have roughly the same PUE (1.09 vs 1.11), though the following calculations are for the second one. In this area
+of the country, the dollar per kWh is $.09. Th IT workload of the center was not available online, but it was estimated to be
+around 9000 kW based off of comparisons to other data centers. When all of this is put into the CO2 calculator hosted by Schneider
+Electric, the annual electricity cost is $7.86 million and the total CO2 output is 77,429 tons (17070 equivalent in cars). 
 
 One thing worth pointing out as well is Google's outreach to the
 community in Council Bluffs since they built the data center there. The
@@ -62,9 +66,19 @@ Sources:
   
 ## E.Datacenter.8
 
-On February 28th 2017, the AWS data center in northern Virginia experienced a service disruption for roughly four hours during the afternoon. It kind of broke the internet (both literally and figuratively). The outage affected S3 buckets for many companies/services, including Slack, Venmo, Gizmodo, Apple Cloud, and many more. Some of these services were down completely, while others just slowed down. It was later reported by Amazon that the outage was caused by an employee doing debugging accidentally widened his scope too big and it dominoed the servers. 
+On February 28th 2017, the AWS data center in northern Virginia experienced a service disruption for roughly four hours during the
+afternoon. It kind of broke the internet (both literally and figuratively). The outage affected S3 buckets for many
+companies/services, including Slack, Venmo, Gizmodo, Apple Cloud, and many more. Some of these services were down completely,
+while others just slowed down. It was later reported by Amazon that the outage was caused by an employee doing debugging
+accidentally widened his scope too big and it dominoed the servers. 
 
-As for the impact it had, obviously there were a large number of services that went down with the server. The Wall Street Journal reported that the total outage cost S&P 500 companies $150 million dollars in lost revenue, as many retailers saw their website performance drop. IU hosts all of its own services locally, but it just so happened that its Canvas instance was hosted on that AWS server. So Canvas was down for roughly four hours, and it caused quite the increase in calls to UITS. Students were freaking out they couldn't submit assignments, professors were complaining they couldn't administer quizzes/tests and so on. The graph below shows number of users assisted by UITS that day. It's pretty clear to see just where the outage happened and how it effected the university.
+As for the impact it had, obviously there were a large number of services that went down with the server. The Wall Street Journal
+reported that the total outage cost S&P 500 companies $150 million dollars in lost revenue, as many retailers saw their website
+performance drop. IU hosts all of its own services locally, but it just so happened that its Canvas instance was hosted on that
+AWS server. So Canvas was down for roughly four hours, and it caused quite the increase in calls to UITS. Students were freaking
+out they couldn't submit assignments, professors were complaining they couldn't administer quizzes/tests and so on. The graph
+below shows number of users assisted by UITS that day. It's pretty clear to see just where the outage happened and how it effected
+the university.
 
 ![AWS Outage [Source](https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo)](https://i.imgur.com/1pB8nmn.png)
 

@@ -1,7 +1,5 @@
 # DataCenter
 
-:o2: d not use the word "I"
-
 ## E.Datacenter.2.b
 
 There are two Google data centers in Council Bluffs, Iowa, the first of which opened in 2008, and the second announced in 2012.

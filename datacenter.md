@@ -76,7 +76,7 @@ performance drop. IU hosts all of its own services locally, but it just so happe
 AWS server. So Canvas was down for roughly four hours, and it caused quite the increase in calls to UITS. Students were freaking
 out they couldn't submit assignments, professors were complaining they couldn't administer quizzes/tests and so on. The graph
 below shows number of users assisted by UITS that day. It's pretty clear to see just where the outage happened and how it effected
-the university.
+the university. The graph below was created using data from Indiana University University Information Technology Services, and the image was uploaded to imgur for simple hosting 
 
 ![AWS Outage [Source](https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo)](https://i.imgur.com/1pB8nmn.png)
 

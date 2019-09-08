@@ -1,4 +1,6 @@
-# Week 1
+# fa19-516-166
+
+## Week 1
 
 - [x] created notebook.md
 - [x] created github account

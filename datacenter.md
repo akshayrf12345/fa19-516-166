@@ -1,5 +1,7 @@
 # DataCenter fa19-516-166
 
+:o2: fix the 1pB8nmn.png image issue iamages must be local in an images folder
+
 ## E.Datacenter.2.b
 
 There are two Google data centers in Council Bluffs, Iowa, the first of which opened in 2008, and the second announced in 2012.

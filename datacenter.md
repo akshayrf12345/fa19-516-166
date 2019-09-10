@@ -76,8 +76,5 @@ As for the impact it had, obviously there were a large number of services that w
 reported that the total outage cost S&P 500 companies $150 million dollars in lost revenue, as many retailers saw their website
 performance drop. IU hosts all of its own services locally, but it just so happened that its Canvas instance was hosted on that
 AWS server. So Canvas was down for roughly four hours, and it caused quite the increase in calls to UITS. Students were freaking
-out they couldn't submit assignments, professors were complaining they couldn't administer quizzes/tests and so on. The graph
-below shows number of users assisted by UITS that day. It's pretty clear to see just where the outage happened and how it effected
-the university.
-
+out they couldn't submit assignments, professors were complaining they couldn't administer quizzes/tests and so on. The outage caused quite the issue at IU, and it surely did at other universities too
 

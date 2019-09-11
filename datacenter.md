@@ -72,6 +72,7 @@ Sources:
 
 ## E.Datacenter.8
 
+<<<<<<< HEAD
 On February 28th 2017, the AWS data center in northern Virginia
 experienced a service disruption for roughly four hours during the
 afternoon. It kind of broke the internet (both literally and
@@ -98,4 +99,26 @@ Indiana University University Information Technology Services, and the
 image was uploaded to imgur for simple hosting
 
 ![AWS Outage [Source](https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo)](https://i.imgur.com/1pB8nmn.png)
+
+On February 28th 2017, the AWS data center in northern Virginia
+experienced a service disruption for roughly four hours during the
+afternoon. It kind of broke the internet (both literally and
+figuratively). The outage affected S3 buckets for many
+companies/services, including Slack, Venmo, Gizmodo, Apple Cloud, and
+many more. Some of these services were down completely, while others
+just slowed down. It was later reported by Amazon that the outage was
+caused by an employee doing debugging accidentally widened his scope too
+big and it dominoed the servers.
+
+As for the impact it had, obviously there were a large number of
+services that went down with the server. The Wall Street Journal
+reported that the total outage cost S&P 500 companies $150 million
+dollars in lost revenue, as many retailers saw their website performance
+drop. IU hosts all of its own services locally, but it just so happened
+that its Canvas instance was hosted on that AWS server. So Canvas was
+down for roughly four hours, and it caused quite the increase in calls
+to UITS. Students were freaking out they couldn't submit assignments,
+professors were complaining they couldn't administer quizzes/tests and
+so on. The outage caused quite the issue at IU, and it surely did at
+other universities too
 

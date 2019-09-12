@@ -2,6 +2,8 @@
 
 :o2: fix the 1pB8nmn.png image issue iamages must be local in an images folder
 
+:o2: please fix conflict with our overlapping commits see >>>>
+
 ## E.Datacenter.2.b
 
 There are two Google data centers in Council Bluffs, Iowa, the first of

@@ -1,4 +1,4 @@
-The steps below are for how to install a virtual Python environment on Windows 10
+The steps below are for how to install a virtual Python environment on Windows 10 (in a virtual Ubuntu environment)
 
 1. Follow the steps at '<https://docs.microsoft.com/en-us/windows/wsl/install-win10>'
 2. Install and run this version of Ubuntu '<https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q?activetab=pivot:overviewtab>'

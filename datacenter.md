@@ -1,9 +1,5 @@
 # DataCenter fa19-516-166
 
-:o2: fix the 1pB8nmn.png image issue iamages must be local in an images folder
-
-:o2: please fix conflict with our overlapping commits see >>>>
-
 ## E.Datacenter.2.b
 
 There are two Google data centers in Council Bluffs, Iowa, the first of
@@ -65,7 +61,7 @@ carbon for all deliveries by the end of 2030. They are seen as a leader
 in renewable energy by the Solar Industries Energy Association, having
 the second most active solar panel installations (behind Apple).
 
-Sources:
+### Sources:
 
 * <https://aws.amazon.com/about-aws/sustainability/>
 * <https://www.businesswire.com/news/home/20190801005260/en/>
@@ -74,7 +70,6 @@ Sources:
 
 ## E.Datacenter.8
 
-<<<<<<< HEAD
 On February 28th 2017, the AWS data center in northern Virginia
 experienced a service disruption for roughly four hours during the
 afternoon. It kind of broke the internet (both literally and
@@ -95,11 +90,12 @@ down for roughly four hours, and it caused quite the increase in calls
 to UITS. Students were freaking out they couldn't submit assignments,
 professors were complaining they couldn't administer quizzes/tests and
 so on. The graph below shows number of users assisted by UITS that day.
-It's pretty clear to see just where the outage happened and how it
-effected the university. The graph below was created using data from
-Indiana University University Information Technology Services, and the
-image was uploaded to imgur for simple hosting
+It's pretty clear to see the four hour block of the outage and how it
+affected the university.
 
-![AWS Outage Graph](https://github.com/cloudmesh-community/fa19-516-166/blob/master/images/awsoutagegraph.png)
+![AWS Outage Graph](images/awsoutagegraph.png)
+This image was created using data from an internal UITS tool, 
+and permission was granted to share this data for this assignment.
 
-Information Source: <https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo>
+### Source 
+* <https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo>

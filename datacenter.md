@@ -92,10 +92,8 @@ professors were complaining they couldn't administer quizzes/tests and
 so on. The graph below shows number of users assisted by UITS that day.
 It's pretty clear to see the four hour block of the outage and how it
 affected the university.
-
-![AWS Outage Graph](images/awsoutagegraph.png)
-This image was created using data from an internal UITS tool, 
-and permission was granted to share this data for this assignment.
+![This image was created using data from an internal UITS tool, and permission was granted to share this data for this assignment.](images/awsoutagegraph.png){#fig:aws_outage_uits}
 
 ### Source 
+
 * <https://www.npr.org/sections/thetwo-way/2017/03/03/518322734/amazon-and-the-150-million-typo>

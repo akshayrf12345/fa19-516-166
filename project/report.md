@@ -75,7 +75,7 @@ TBD
 
 Cloudmesh not entirely working at this point, began to explore AWS frugal example. Tested some urls to obtain the pricing info
 from GCP and Azure. Needs to be cleaned, and will also likely need to be pushed into mongodb (not running yet). See AWS example. Code so far
-at [frugaltesting.py](/frugaltesting.py)
+at [frugaltesting.py](https://github.com/cloudmesh-community/fa19-516-166/blob/master/project/frugaltesting.py)
 
 #### Week of 10/6/19
 

@@ -20,12 +20,12 @@ on hardware specs/price
 
 ## Design
 
-The Google Cloud Platform and Azure flavor obtain methods will be updated in order to pull in pricing information along
-with the flavor information (much like how the AWS does currently). Like AWS, these will be stored in the local MongoDB.
-A cms command will be created that reads in the flavor data from Mongo for AWS, GCP, and Azure, and fits them into an
-abstract class (if necessary). From here the flavors will be compared against each other across a multiple dimensions,
-many of which will be a transformation of price. From here the cheapest, most x dimension flavor will be returned. Still
-not sure how the flavors will be compared, will worry about that once data is pulled into db
+Calling the frugal command (not yet designed/finalized) will first check to see if pricing information exists in the
+local mongodb for AWS, GCP, and Azure flavors. As of of now, only the information only exists for AWS. If the information does
+not exist, then it is pulled (and stored back into db? -join for if vm exists but not pricing?).Data will then be joined into
+a single numpy area/pandas frame (depending on calculations tbd). Many of the dimensions of the VMs will be transformed by price
+for benchmarking. The transformed table should also then be saved to the mongodb for memory? Or calc script will rerun since
+pricing will stay in mongo? Once again tbd. Anyway, the best value vm will be returned. 
 
 ### Architecture
 

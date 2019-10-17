@@ -71,6 +71,13 @@ TBD
 * PyTests
 * Add more ToDos
 
+### Questions moving forward
+
+* When to write back to mongodb? IE should GCP and Azure flavors be written back to mongodb? Compute for those two clouds
+  are in development so might have to wait until those are further along before worrying about them
+* Keep everything in frugal.py or move GCP and Azure get pricing functions to other directories much like AWS currently is? Once
+  again this will depend on other developments to Cloudmesh
+
 ### Weekly Work Updates
 
 #### Week of 9/29/19

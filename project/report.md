@@ -95,4 +95,7 @@ which helped in understand of Cloudmesh command flow. No code updates
 
 #### Week of 10/13/19
 
-Currently reading documentation on OPENAPI and finalizing how that service will be integrated in frugal project. To be updated...
+Currently reading documentation on OPENAPI and thinking about how that service will be integrated in frugal project.
+Updated report with all new progress, and Google pricing is completed in
+[frugaltesting.py](https://github.com/cloudmesh-community/fa19-516-166/blob/master/project/frugaltesting.py), 
+Azure is next

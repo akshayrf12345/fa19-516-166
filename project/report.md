@@ -1,7 +1,9 @@
 # Cloudmesh Frugal With AWS, Azure, and Google Cloud
 
 Brian Funk
+
 brfunk@iu.edu
+
 [fa19-516-166](https://github.com/cloudmesh-community/fa19-516-166)
 
 ## Abstract
@@ -18,7 +20,12 @@ on hardware specs/price
 
 ## Design
 
-The Google Cloud Platform and Azure 
+The Google Cloud Platform and Azure flavor obtain methods will be updated in order to pull in pricing information along
+with the flavor information (much like how the AWS does currently). Like AWS, these will be stored in the local MongoDB.
+A cms command will be created that reads in the flavor data from Mongo for AWS, GCP, and Azure, and fits them into an
+abstract class (if necessary). From here the flavors will be compared against each other across a multiple dimensions,
+many of which will be a transformation of price. From here the cheapest, most x dimension flavor will be returned. Still
+not sure how the flavors will be compared, will worry about that once data is pulled into db
 
 ### Architecture
 

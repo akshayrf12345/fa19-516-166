@@ -77,6 +77,7 @@ TBD
   are in development so might have to wait until those are further along before worrying about them
 * Keep everything in frugal.py or move GCP and Azure get pricing functions to other directories much like AWS currently is? Once
   again this will depend on other developments to Cloudmesh
+* GCP has an api to get pricing but it needs a key...how to use with cloudmesh/is this okay?
 
 ### Weekly Work Updates
 

@@ -29,7 +29,9 @@ pricing will stay in mongo? Once again tbd. Anyway, the best value vm will be re
 
 ### Architecture
 
-TBD
+Below is an early sketch of the logic flow of cloudmesh frugal. It will likely be changed in final implemenetation, as this is
+just an overview. 
+![Very rough architecture/design diagram](images/frugal_design.png){#fig:frugal_design}
 
 ## Implementation
 

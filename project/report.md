@@ -6,6 +6,8 @@ brfunk@iu.edu
 
 [fa19-516-166](https://github.com/cloudmesh-community/fa19-516-166)
 
+[Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
+
 ## Abstract
 
 Cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It will compare price relative

@@ -111,3 +111,7 @@ Azure is complete as well, read into same template as GCP. Started Mongo as well
 #### Week of 10/27/19
 
 Amazon info connected from Mongo, is now parsed into matrix. going to start working on Mongo refresh checks/downloads
+
+#### Week of 11/03/19
+
+Prepping for demo at end of week with Gregor.

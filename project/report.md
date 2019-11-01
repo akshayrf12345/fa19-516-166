@@ -43,6 +43,8 @@ TBD
 
 TBD
 
+add Docker information (see Piazza post 354)
+
 ## Results
 
 TBD
@@ -108,4 +110,4 @@ Azure is complete as well, read into same template as GCP. Started Mongo as well
 
 #### Week of 10/27/19
 
-Amazon info connected from Mongo, still need to parse and fit into template matrix. Also, still need to add check for if it doesn't exist and to force a refresh. Hope to have both done by the end of the week.
+Amazon info connected from Mongo, is now parsed into matrix. going to start working on Mongo refresh checks/downloads

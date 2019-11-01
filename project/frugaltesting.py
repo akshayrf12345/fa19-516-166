@@ -2,11 +2,28 @@ import requests
 import pprint
 import numpy as np
 from cloudmesh.mongo.CmDatabase import CmDatabase
-
-#mostly just gonna mess around here and experiment with pulling pricing information from different cloud services
+from cloudmesh.compute.aws import Provider
 
 ###To Do###
 #check to see if GCP, AWS, and Azure pricing exists in local mongodb, if not, pull using below functions
+def cms_frugal():
+    #AWS pricing info
+    aws = get_aws_pricing()
+
+    #GCP pricing info
+    gcp = get_google_pricing()
+
+    #azure pricing info
+    azure = get_azure_pricing()
+
+    #TO DO - combine the above(will need to clean up above first)
+
+    #TO DO - do math things on the matrix
+
+    #TO DO - add input parameters for what to value in frugality
+
+
+    return 'temp'
 
 
 #cols for final price array will be as follows:
@@ -21,12 +38,18 @@ def get_aws_pricing():
 
     awsstuff = cm.collection('aws-flavor')
 
-    #need do do some kind of check for no AWS flavor
+    print(awsstuff.count())
 
-    #this assumes it exists in the mongo
+    #need do do some kind of check for no AWS flavor
+    if awsstuff.count() == 0:
+        #need to refresh aws flavor list, then grab from Mongo ->create a provider?
+        print('not available')
+
+    #this assumes aws info exists in the mongo
     aws_list = []
     for x in awsstuff.find():
-        print(x['attributes'])
+        if ('location' not in x['attributes'] or 'vcpu' not in x['attributes'] or 'price' not in x):
+            continue
         aws_list.append(np.array(['AWS', x['sku'], x['attributes']['location'], x['attributes']['vcpu'], x['attributes']['memory'], float(x['price']['pricePerUnit']['USD'])]))
     return np.stack(aws_list, axis=0)
 
@@ -66,11 +89,3 @@ def get_azure_pricing():
                 for location, value in val['prices']['perhour'].items():
                     azure_list.append(np.array(['Azure', key, location, cores, memory, float(value['value'])]))
     return np.stack(azure_list, axis=0)
-#keys are dict_keys(['tiers', 'softwareLicenses', 'windowsTypes', 'linuxTypes', 'operatingSystems', 'billingOptions',
-# 'sizesOneYear', 'sizesThreeYear', 'sizesPayGo', 'subscriptionOptions', 'offers', 'regions', 'discounts', 'resources', 'schema', 'skus'])
-
-#pp = pprint.PrettyPrinter(indent=4)
-#googlemat =get_google_pricing()
-#azuremat = get_azure_pricing()
-#pp.pprint(azuremat)
-#pp.pprint(googlemat.shape)

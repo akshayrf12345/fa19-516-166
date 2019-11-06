@@ -102,11 +102,14 @@ which helped in understand of Cloudmesh command flow. No code updates
 Currently reading documentation on OPENAPI and thinking about how that service will be integrated in frugal project.
 Updated report with all new progress, and Google pricing is completed in
 [frugaltesting.py](https://github.com/cloudmesh-community/fa19-516-166/blob/master/project/frugaltesting.py), and it is done without
-using the API. It uses a simplified JSON from their calculator. The file is parsed into the general structure that will be used for benchmarking, a 2d numpy array with features [provider, machine name, region, cores, memory, and price]. Next up will be doing the same with Azure.
+using the API. It uses a simplified JSON from their calculator. The file is parsed into the general structure that will be used for
+benchmarking, a 2d numpy array with features [provider, machine name, region, cores, memory, and price]. Next up will be doing the
+same with Azure.
 
 #### Week of 10/20/19
 
-Azure is complete as well, read into same template as GCP. Started Mongo as well but ran into issue with YAML file for the MODE of the Mongo - ended the week...
+Azure is complete as well, read into same template as GCP. Started Mongo as well but ran into issue with YAML file for the MODE of
+the Mongo - ended the week...
 
 #### Week of 10/27/19
 
@@ -114,4 +117,7 @@ Amazon info connected from Mongo, is now parsed into matrix. going to start work
 
 #### Week of 11/03/19
 
-Prepping for demo at end of week with Gregor.
+Prep for demo at end of week with Gregor. Started to actually pull everything together. Flipped the frugal testing file into an
+base class with a list method. Now have separate frugal files for aws, gcp, and azure that return a price matrix for each one. Built
+in logic for it to save back to the db, as well as an argument for a refresh. Wrapping up integration for it to be called from
+the cloudmesh console.

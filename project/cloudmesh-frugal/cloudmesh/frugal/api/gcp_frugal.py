@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime
 from cloudmesh.mongo.CmDatabase import CmDatabase
 from cloudmesh.common.console import Console
-from cloudmesh.compute.frugal import helpers
+from cloudmesh.frugal.api import helpers
 
 ############
 ###GOOGLE###

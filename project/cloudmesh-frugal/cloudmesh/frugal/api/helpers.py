@@ -13,3 +13,6 @@ def format_mat(flavor_mat):
     flavor_frame['core/price'] = flavor_frame['cores']/flavor_frame['price']
     flavor_frame['memory/price'] = flavor_frame['memory']/flavor_frame['price']
     return flavor_frame
+
+
+

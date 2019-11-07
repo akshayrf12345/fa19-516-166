@@ -3,7 +3,7 @@ from datetime import datetime
 from cloudmesh.mongo.CmDatabase import CmDatabase
 from cloudmesh.compute.aws import Provider as awsprv
 from cloudmesh.common.console import Console
-from cloudmesh.compute.frugal import helpers
+from cloudmesh.frugal.api import helpers
 
 #########
 ###AWS###
@@ -16,6 +16,7 @@ def get_aws_pricing(refresh = False):
 
     #check to see if AWS frugal entries already exist
     awsinfo = cm.collection('aws-frugal')
+
     if awsinfo.estimated_document_count() > 0 and not refresh:
         #frugal information alredy exists, so return it
         Console.msg(f"Using local db aws flavors...")

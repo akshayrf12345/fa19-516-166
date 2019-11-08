@@ -67,12 +67,8 @@ TBD
 ## Work Breakdown
 
 ### TODO
-
-* Implement cms commands to begin frugal code
-* Capture and formet pricing info from GCP/Azure -see AWS implementation
-* Service?
-* Determine how benchmarking wil work (divide all by price?)
 * PyTests
+* frugal boot
 * Add more ToDos
 
 ### Questions moving forward
@@ -120,4 +116,4 @@ Amazon info connected from Mongo, is now parsed into matrix. going to start work
 Prep for demo at end of week with Gregor. Started to actually pull everything together. Flipped the frugal testing file into an
 base class with a list method. Now have separate frugal files for aws, gcp, and azure that return a price matrix for each one. Built
 in logic for it to save back to the db, as well as an argument for a refresh. Wrapping up integration for it to be called from
-the cloudmesh console.
+the cloudmesh console. Console implementation completed. All that is left is frugal boot, which will require some checks

@@ -67,9 +67,11 @@ TBD
 ## Work Breakdown
 
 ### TODO
-* PyTests
-* frugal boot
-* Add more ToDos
+* add Azure proper to frugal
+* frugal boot - need to actually boot instead of just limit
+* pytest for how long it takes to do various frugal cmd commands
+* some kind of benchmark for a booted machine that measures the actually speed
+* lastly I need to do some kind of Docker test or something?
 
 ### Questions moving forward
 
@@ -117,3 +119,10 @@ Prep for demo at end of week with Gregor. Started to actually pull everything to
 base class with a list method. Now have separate frugal files for aws, gcp, and azure that return a price matrix for each one. Built
 in logic for it to save back to the db, as well as an argument for a refresh. Wrapping up integration for it to be called from
 the cloudmesh console. Console implementation completed. All that is left is frugal boot, which will require some checks
+
+#### Week of 11/10/19
+
+Was not able to make too much progress this week because of other assignments. Frugal boot now has a command line interface. For now
+it doesn't boot anything, but I worked on logic so that it filters the table to providers that can actually be booted. For now this
+is only AWS but it should work with Azure once I incorporate a few more things. Otherwise I am now looking at the cloudmesh code to
+figure out what information I need to boot a vm. Hope to have all of that done by the end of next week so I can begin to add tests.

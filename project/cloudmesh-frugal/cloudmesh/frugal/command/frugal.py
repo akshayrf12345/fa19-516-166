@@ -21,26 +21,29 @@ class FrugalCommand(PluginCommand):
 
           Usage:
                 frugal list --refresh=REFRESH --order=ORDER --resultssize=RESULTSSIZE
+                frugal list --refresh=REFRESH --order=ORDER
+                frugal list --order=ORDER --resultssize=RESULTSSIZE
                 frugal list --refresh=REFRESH --resultssize=RESULTSSIZE
-                frugal list --refresh=REFRESH --order=ORDER --resultssize=RESULTSSIZE
                 frugal list --resultssize=RESULTSSIZE
                 frugal list --order=ORDER
                 frugal list --refresh=REFRESH
                 frugal list
+                frugal boot --refresh=REFRESH --order=ORDER
+                frugal boot --order=ORDER
+                frugal boot --refresh=REFRESH
+                frugal boot
 
           This command does some useful things.
 
           Arguments:
-              REFRESH boolean
-              ORDER boolean
+              REFRESH forces a refresh on the flavors across GCP, AWS, and Azure
+              ORDER Either ['price' (default), 'cores', 'memory')
 
           Options:
               -order      order by memory, cores, or price
-              -refresh     force refresh
+              -refresh    force refresh
 
         """
-        print(arguments)
-
         arguments.REFRESH = arguments['--refresh'] or None
         arguments.RESULTSSIZE = arguments['--resultssize'] or None
         arguments.ORDER = arguments['--order'] or None
@@ -60,7 +63,9 @@ class FrugalCommand(PluginCommand):
 
 
         if arguments.list:
-            m.list(order = arguments.ORDER,refresh =bool(arguments.REFRESH), resultssize= int(arguments.RESULTSSIZE))
+            m.list(order = arguments.ORDER,refresh =bool(arguments.REFRESH == 'True'), resultssize= int(arguments.RESULTSSIZE))
 
-        Console.error("COMPLETE")
+        if arguments.boot:
+            m.boot(order = arguments.ORDER,refresh =bool(arguments.REFRESH == 'True'))
+
         return ""

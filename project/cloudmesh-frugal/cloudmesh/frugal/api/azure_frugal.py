@@ -29,7 +29,7 @@ def get_azure_pricing(refresh = False):
                     for location, value in val['prices']['perhour'].items():
                         if type(value['value']) is str:
                             print(value['value'])
-                        azure_list.append(np.array(['Azure', key, location, int(cores), float(memory), float(value['value'])]))
+                        azure_list.append(np.array(['azure', key, location, int(cores), float(memory), float(value['value'])]))
 
     azureinfo = np.stack(azure_list, axis=0)
     azureinfo = helpers.format_mat(azureinfo)

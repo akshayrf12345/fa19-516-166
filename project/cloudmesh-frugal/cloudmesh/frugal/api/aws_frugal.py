@@ -26,7 +26,7 @@ def get_aws_pricing(refresh = False):
     def aws_parse(input):
         if ('location' not in x['attributes'] or 'vcpu' not in x['attributes'] or 'price' not in x or x['attributes']['memory'] == 'NA'):
             return
-        return np.array(['AWS', x['sku'], x['attributes']['location'], int(x['attributes']['vcpu']), float(x['attributes']['memory'][:-4].replace(',','')), float(x['price']['pricePerUnit']['USD'])])
+        return np.array(['aws', x['sku'], x['attributes']['location'], int(x['attributes']['vcpu']), float(x['attributes']['memory'][:-4].replace(',','')), float(x['price']['pricePerUnit']['USD'])])
 
     #check to see if general flavor entries exist
     awsinfo = cm.collection('aws-flavor')

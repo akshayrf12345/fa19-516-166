@@ -32,6 +32,7 @@ class FrugalCommand(PluginCommand):
                 frugal boot --order=ORDER
                 frugal boot --refresh=REFRESH
                 frugal boot
+                frugal benchmark
 
           This command does some useful things.
 
@@ -67,5 +68,8 @@ class FrugalCommand(PluginCommand):
 
         if arguments.boot:
             m.boot(order = arguments.ORDER,refresh =bool(arguments.REFRESH == 'True'))
+
+        if arguments.benchmark:
+            m.benchmark()
 
         return ""

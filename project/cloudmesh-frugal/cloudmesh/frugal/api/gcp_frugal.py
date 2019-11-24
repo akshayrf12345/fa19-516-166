@@ -50,7 +50,7 @@ def get_google_pricing(refresh = False):
             "kind": 'frugal',
             "driver": 'gcp',
             "cloud": 'gcp',
-            "name": str(entry['machine-name'] + '-' + entry['region/location']),
+            "name": str(entry['machine-name'] + '-' + entry['location']),
             "updated": str(datetime.utcnow()),
         }
 

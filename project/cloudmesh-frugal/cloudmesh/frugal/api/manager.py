@@ -26,7 +26,7 @@ class Manager(object):
         flavor_mat = aws + gcp + azure
 
         flavor_frame = pd.DataFrame(flavor_mat)[
-            ['provider', 'machine-name', 'region/location', 'cores', 'core/price', 'memory', 'memory/price', 'price']]
+            ['provider', 'machine-name', 'location', 'cores', 'core/price', 'memory', 'memory/price', 'price']]
         flavor_frame = flavor_frame.replace([np.inf, -np.inf], np.nan).dropna()
 
         if order == 'cores':
@@ -42,7 +42,7 @@ class Manager(object):
         # print out list of price tables things
         if printit:
             print(Printer.write(flavor_frame.head(resultssize).to_dict('records'),
-                                order=['provider', 'machine-name', 'region/location', 'cores', 'core/price', 'memory',
+                                order=['provider', 'machine-name', 'location', 'cores', 'core/price', 'memory',
                                        'memory/price', 'price']))
         return flavor_frame
 
@@ -87,5 +87,14 @@ class Manager(object):
         print('new cloud is ' + var_list['cloud'] + ', booting up the vm with flavor ' + cheapest['machine-name'])
         vmcom = VmCommand()
         vmcom.do_vm('boot --flavor=' + cheapest['machine-name'])
+        return
 
+    def benchmark(self):
+        Console.msg(f'checking if a vm is running')
+        vmcom = VmCommand()
+        try:
+            vmcom.do_vm('ssh')
+        except:
+            Console.msg(f'could not ssh into vm, make sure one is running')
+        print('whats happens if I do this now? hmmm')
 

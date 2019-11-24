@@ -126,3 +126,10 @@ Was not able to make too much progress this week because of other assignments. F
 it doesn't boot anything, but I worked on logic so that it filters the table to providers that can actually be booted. For now this
 is only AWS but it should work with Azure once I incorporate a few more things. Otherwise I am now looking at the cloudmesh code to
 figure out what information I need to boot a vm. Hope to have all of that done by the end of next week so I can begin to add tests.
+
+#### Week of 11/17/19
+
+Resolved an issue with not being able to boot up aws vms, which was hindering the frugal boot code. Now frugal boot works with aws,
+and the structure is there for it to work with azure with a few tweaks. Currently having a few issues with getting an azure vm up
+and running, but I'll try to figure that out during class time this week. After that I'll get Azure running and then start working
+on PyTests and documentation. Hope to have that all done by the end of the weekend to give time to check over things

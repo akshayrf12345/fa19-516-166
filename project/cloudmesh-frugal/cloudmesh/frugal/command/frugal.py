@@ -51,7 +51,7 @@ class FrugalCommand(PluginCommand):
 
                 frugal benchmark
                     executes a benchmarking command on a vm, it
-                    assumes that the vm has already been booted.
+                    requires an available vm.
 
             Examples:
 
@@ -163,63 +163,32 @@ class FrugalCommand(PluginCommand):
         flavorframe = flavorframe[flavorframe['provider'].isin(keysya)]
         Console.msg(f"Showing top 5 options, booting first option now...")
         converted = flavorframe.head(5).to_dict('records')
-        print(Printer.write(converted))
+        Console.msg(Printer.write(converted))
         cheapest = converted[0]
         var_list = Variables(filename="~/.cloudmesh/var-data")
         var_list['cloud'] = cheapest['provider']
-        print('new cloud is ' + var_list['cloud'] + ', booting up the vm with flavor ' + cheapest['machine-name'])
+        Console.msg(f'new cloud is ' + var_list['cloud'] + ', booting up the vm with flavor ' + cheapest['machine-name'])
         vmcom = VmCommand()
         vmcom.do_vm('boot --flavor=' + cheapest['machine-name'])
         return
 
     def benchmark(self):
-        Console.msg(f'checking if a vm is running')
-        """
-        # get active cloud
-        var_list = Variables(filename="~/.cloudmesh/var-data")
-        current_cloud = var_list['cloud']
-
-        # check to see if that cloud has an available vm
-        cm = CmDatabase()
-        print(current_cloud)
-        vms = cm.collection(current_cloud + '-vm')
-        activevms = list(vms.find({'status': 'available'}))
-        print(activevms)
-        if len(activevms) == 0:
-            Console.error(f'no available vms...')
-            return
-        activevm = activevms[-1]
-
-        #get key for the vm
-        keyname=activevm['key']
-        key_collection = cm.collection('local-key')
-        keys = list(key_collection.find({'name' : keyname}))
-        if len(keys) == 0:
-            Console.error(f'key for vm does not exist in local db...')
-            return
-        mykey = keys[0]
-
-        #get file path of the benchmark
-        filepath = path.dirname(path.dirname(path.abspath(__file__))) + '/api/benchmark.py'
-        filepath = filepath.replace('\\','/')
-
-        #move the benchmark file to the vm
-        print('-i ' + mykey['path'] + ' ubuntu@' + activevm['public_ips'] + ':' + filepath + ' /.')
-        return
-        Shell.scp('-i ' + mykey['path'] + ' ubuntu@' + activevm['public_ips'] + ':' + filepath + ' /.')
-        """
         # get file path of the benchmark
         filepath = path.dirname(path.dirname(path.abspath(__file__))) + '/api/benchmark.py'
         filepath = filepath.replace('\\', '/')
 
         # prepare command to run the file
         vmcom = VmCommand()
-        print('put ' + filepath + ' /home/ubuntu')
-        vmcom.do_vm('put ' + filepath + ' /home/ubuntu')
-
         try:
-            print('ssh --command=\"chmod +x benchmark.py;benchmark.py;exit\"')
-            vmcom.do_vm('ssh --command=\"chmod +x benchmark.py;./benchmark.py;exit\"')
+            Console.msg(f'moving benchmark file to vm...')
+            Console.msg(f'put ' + filepath + ' /home/ubuntu')
+            vmcom.do_vm('put ' + filepath + ' /home/ubuntu')
         except:
             Console.msg(f'could not ssh into vm, make sure one is running and reachable')
-        print('todo - report times here')
+
+        try:
+            Console.msg(f'executing the benchmark...')
+            Console.msg('ssh --command=\"chmod +x benchmark.py;./benchmark.py;rm benchmark.py;exit\"')
+            vmcom.do_vm('ssh --command=\"chmod +x benchmark.py;./benchmark.py;rm benchmark.py;exit\"')
+        except:
+            Console.msg(f'could not ssh into vm, make sure one is running and reachable')

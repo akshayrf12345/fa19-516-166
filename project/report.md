@@ -10,8 +10,9 @@ brfunk@iu.edu
 
 ## Abstract
 
-Cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It will compare price relative
-to the hardware specifications of the machines, an provide the VM with the best value.
+Cloudmesh frugal is a cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It will compare
+price relative to the hardware specifications of the machines, an provide the VM with the best value. It has three core commands which
+list, boot, and benchmark the cheapest vm.
 
 ## Introduction
 

@@ -10,30 +10,31 @@ brfunk@iu.edu
 
 ## Abstract
 
-Cloudmesh frugal is a cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It will compare
+Cloudmesh frugal is a cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It compares
 price relative to the hardware specifications of the machines, an provide the VM with the best value. It has three core commands which
 list, boot, and benchmark the cheapest vm.
 
 ## Introduction
 
-Cloudmesh Frugal will collect pricing information on all of the availble VMs for AWS, GCP, and Azure. Those prices will be
-compared to the performance of the machine in benchmarking, which will then all be compared against each other. There is already
-pricing information for AWS in Cloudmesh, which will be extended to GCP and Azure. The frugal benchmarks will compare them based
-on hardware specs/price
+Cloudmesh frugal collects pricing information on all of the availble flavors for AWS, GCP, and Azure. Those prices are then
+compared to the physical specifications of the machine, which are then compared with each other. The core component of frugal is a
+ranked list of flavors across the three compute providers, sorted by value. From this list, vms can be booted, and then benchmarked. 
 
 ## Design
 
-Calling the frugal command (not yet designed/finalized) will first check to see if pricing information exists in the
-local mongodb for AWS, GCP, and Azure flavors. As of of now, only the information only exists for AWS. If the information does
-not exist, then it is pulled (and stored back into db? -join for if vm exists but not pricing?).Data will then be joined into
-a single numpy area/pandas frame (depending on calculations tbd). Many of the dimensions of the VMs will be transformed by price
-for benchmarking. The transformed table should also then be saved to the mongodb for memory? Or calc script will rerun since
-pricing will stay in mongo? Once again tbd. Anyway, the best value vm will be returned. 
+Calling the cloudmesh frugal list command will first check to see if frugal information already exists in the local mongodb. If it is
+does and the user does not signal for a refresh, then the local information is used. If the information does not exist for a provider
+or the user signals for a refresh, then the flavor pricing information is pulled and processed into a frugal matrix. The frugal
+is then saved back to the local mongodb, and then combined with the information of the other providers. It is then sorted, and the final
+frugal matrix is printed to the console. Calling frugal boot retrieves final table produces in frugal list, but does not print it.
+Instead it filters the table to the providers that are usuable, and then boots the top ranked vm. Finally frugal benchmark is designed
+to be used directly after frugal boot, as it uses the current cloud and the most recent vm. It sends a benchmarking file to the vm via
+scp, runs the benchmark, prints the benchmark times, and then deletes the file.
 
 ### Architecture
 
-Below is an early sketch of the logic flow of cloudmesh frugal. It will likely be changed in final implemenetation, as this is
-just an overview. 
+This is an early sketch of the logic flow of cloudmesh frugal list and boot. It is not comprehensive, but it gives a core understanding
+of how the command works and interacts with the local db and the internet.
 ![Very rough architecture/design diagram](images/frugal_design.png){#fig:frugal_design}
 
 ## Implementation

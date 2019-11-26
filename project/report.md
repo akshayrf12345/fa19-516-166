@@ -37,51 +37,18 @@ This is an early sketch of the logic flow of cloudmesh frugal list and boot. It 
 of how the command works and interacts with the local db and the internet.
 ![Very rough architecture/design diagram](images/frugal_design.png){#fig:frugal_design}
 
-## Implementation
+## Usage examples
 
 TBD
 
-### Technologies Used
+## Benchmarks
 
 TBD
-
-add Docker information (see Piazza post 354)
-
-## Results
-
-TBD
-
-### Deployment Benchmarks
-
-TBD
-
-### Application Benchmarks
-
-TBD
-
-## Limitations
-
-TBD
-
-## Conclusion
-
 
 ## Work Breakdown
 
 ### TODO
-* add Azure proper to frugal
-* frugal boot - need to actually boot instead of just limit
 * pytest for how long it takes to do various frugal cmd commands
-* some kind of benchmark for a booted machine that measures the actually speed
-* lastly I need to do some kind of Docker test or something?
-
-### Questions moving forward
-
-* When to write back to mongodb? IE should GCP and Azure flavors be written back to mongodb? Compute for those two clouds
-  are in development so might have to wait until those are further along before worrying about them
-* Keep everything in frugal.py or move GCP and Azure get pricing functions to other directories much like AWS currently is? Once
-  again this will depend on other developments to Cloudmesh
-* GCP has an api to get pricing but it needs a key...how to use with cloudmesh/is this okay?
 
 ### Weekly Work Updates
 
@@ -135,3 +102,7 @@ Resolved an issue with not being able to boot up aws vms, which was hindering th
 and the structure is there for it to work with azure with a few tweaks. Currently having a few issues with getting an azure vm up
 and running, but I'll try to figure that out during class time this week. After that I'll get Azure running and then start working
 on PyTests and documentation. Hope to have that all done by the end of the weekend to give time to check over things
+
+#### Week of 11/24/19
+
+Completed Azure boot and frugal benchmark. Finalized documentation of code and currently adding pytests for reproducibility. 

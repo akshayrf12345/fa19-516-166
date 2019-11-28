@@ -1,5 +1,10 @@
 Documentation
 =============
+Cloudmesh frugal was created with cloudmesh commands, and thus can be installed with the following commands
+
+$ cd cloudmesh-frugal
+$ python setup.py install
+# pip install .
 
 
 [![image](https://img.shields.io/travis/TankerHQ/cloudmesh-bar.svg?branch=master)](https://travis-ci.org/TankerHQ/cloudmesn-bar)

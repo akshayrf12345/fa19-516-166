@@ -20,6 +20,65 @@ Cloudmesh frugal collects pricing information on all of the availble flavors for
 compared to the physical specifications of the machine, which are then compared with each other. The core component of frugal is a
 ranked list of flavors across the three compute providers, sorted by value. From this list, vms can be booted, and then benchmarked. 
 
+## Usage
+
+        """
+        ::
+
+            Usage:
+                frugal list [-refresh] [--order=ORDER] [--size=SIZE]
+                frugal boot [--refresh] [--order=ORDER]
+                frugal benchmark
+
+            Arguments:
+              ORDER       sorting hierarchy, either price, cores, or
+                          memory
+              SIZE        number of results to be printed to the
+                          console
+
+            Options:
+               --refresh         forces a refresh on all entries for
+                                 aws, gcp, and azure
+               --order=ORDER     sets the sorting on the results list
+               --size=SIZE       sets the number of results returned
+                                 to the console
+
+            Description:
+                frugal list
+                    lists cheapest flavors for aws, azure, and gcp
+                    in a sorted table
+
+                frugal boot
+                    boots the cheapest bootable vm from the frugal
+                    list. Currently only supports azure and aws
+
+                frugal benchmark
+                    executes a benchmarking command on the newest
+                    available vm on the current cloud
+
+            Examples:
+
+
+                 cms frugal list --refresh --order=price --size=150
+                 cms frugal boot --order=memory
+                 cms frugal benchmark
+
+                 ...and so on
+                 
+            Tips:
+                frugal benchmark will stall the command line after 
+                the user enters their ssh key. This means the benchmark
+                is running
+                
+
+            Limitations:
+
+                frugal boot and benchmark are not supported for gcp
+
+
+
+        """
+
 ## Design
 
 Calling the cloudmesh frugal list command will first check to see if frugal information already exists in the local mongodb. If it is
@@ -33,22 +92,16 @@ scp, runs the benchmark, prints the benchmark times, and then deletes the file.
 
 ### Architecture
 
-This is an early sketch of the logic flow of cloudmesh frugal list and boot. It is not comprehensive, but it gives a core understanding
+This is a sketch of the logic flow of cloudmesh frugal list and boot. It is not comprehensive, but it gives a core understanding
 of how the command works and interacts with the local db and the internet.
 ![Very rough architecture/design diagram](images/frugal_design.png){#fig:frugal_design}
 
-## Usage examples
-
-TBD
 
 ## Benchmarks
 
 TBD
 
 ## Work Breakdown
-
-### TODO
-* pytest for how long it takes to do various frugal cmd commands
 
 ### Weekly Work Updates
 

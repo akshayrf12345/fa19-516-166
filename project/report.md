@@ -84,11 +84,11 @@ ranked list of flavors across the three compute providers, sorted by value. From
 Calling the cloudmesh frugal list command will first check to see if frugal information already exists in the local mongodb. If it is
 does and the user does not signal for a refresh, then the local information is used. If the information does not exist for a provider
 or the user signals for a refresh, then the flavor pricing information is pulled and processed into a frugal matrix. The frugal
-is then saved back to the local mongodb, and then combined with the information of the other providers. It is then sorted, and the final
-frugal matrix is printed to the console. Calling frugal boot retrieves final table produces in frugal list, but does not print it.
-Instead it filters the table to the providers that are usuable, and then boots the top ranked vm. Finally frugal benchmark is designed
-to be used directly after frugal boot, as it uses the current cloud and the most recent vm. It sends a benchmarking file to the vm via
-scp, runs the benchmark, prints the benchmark times, and then deletes the file.
+is then saved back to the local mongodb, and then combined with the information of the other providers. It is then sorted, and the 
+final frugal matrix is printed to the console. Calling frugal boot retrieves final table produces in frugal list, but does not
+print it. Instead it filters the table to the providers that are usuable, and then boots the top ranked vm. Finally frugal benchmark
+is designed to be used directly after frugal boot, as it uses the current cloud and the most recent vm. It sends a benchmarking file
+to the vm via scp, runs the benchmark, prints the benchmark times, and then deletes the file.
 
 ### Architecture
 
@@ -99,7 +99,8 @@ of how the command works and interacts with the local db and the internet.
 
 ## Benchmarks
 
-TBD
+There are two pytest files for frugal, test_01_frugal_list.py and test_02_frugal_boot.py. They collectively test frugal list, boot,
+and benchmark.
 
 ## Work Breakdown
 
@@ -108,7 +109,8 @@ TBD
 #### Week of 9/29/19
 
 Cloudmesh not entirely working at this point, began to explore AWS frugal example. Tested some urls to obtain the pricing info
-from GCP and Azure. Needs to be cleaned, and will also likely need to be pushed into mongodb (not running yet). See AWS example. Code so far
+from GCP and Azure. Needs to be cleaned, and will also likely need to be pushed into mongodb (not running yet). See AWS example. Code 
+so far
 at [frugaltesting.py](https://github.com/cloudmesh-community/fa19-516-166/blob/master/project/frugaltesting.py)
 
 #### Week of 10/6/19
@@ -158,4 +160,4 @@ on PyTests and documentation. Hope to have that all done by the end of the weeke
 
 #### Week of 11/24/19
 
-Completed Azure boot and frugal benchmark. Finalized documentation of code and currently adding pytests for reproducibility. 
+Completed Azure boot and frugal benchmark. Finalized documentation of code. Added pytests

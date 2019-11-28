@@ -23,7 +23,7 @@ class FrugalCommand(PluginCommand):
         ::
 
             Usage:
-                frugal list [-refresh] [--order=ORDER] [--size=SIZE]
+                frugal list [--refresh] [--order=ORDER] [--size=SIZE]
                 frugal boot [--refresh] [--order=ORDER]
                 frugal benchmark
 
@@ -50,13 +50,27 @@ class FrugalCommand(PluginCommand):
                     list. Currently only supports azure and aws
 
                 frugal benchmark
-                    executes a benchmarking command on a vm, it
-                    requires an available vm.
+                    executes a benchmarking command on the newest
+                    available vm on the current cloud
 
             Examples:
 
 
-                 put examples here...
+                 cms frugal list --refresh --order=price --size=150
+                 cms frugal boot --order=memory
+                 cms frugal benchmark
+
+                 ...and so on
+
+            Tips:
+                frugal benchmark will stall the command line after
+                the user enters their ssh key. This means the benchmark
+                is running
+
+
+            Limitations:
+
+                frugal boot and benchmark are not supported for gcp
 
 
 
@@ -78,17 +92,19 @@ class FrugalCommand(PluginCommand):
 
 
         if arguments.list:
-            self.list(order = arguments.ORDER,refresh =bool(arguments.REFRESH), resultssize= int(arguments.SIZE))
-
-        if arguments.boot:
-            self.boot(order = arguments.ORDER,refresh =bool(arguments.REFRESH))
-
-        if arguments.benchmark:
+            self.list(order = arguments.ORDER,refresh=bool(arguments.REFRESH), resultssize= int(arguments.SIZE))
+        elif arguments.boot:
+            self.boot(order = arguments.ORDER,refresh=bool(arguments.REFRESH))
+        elif arguments.benchmark:
             self.benchmark()
+        elif arguments.test:
+            self.test(order = arguments.ORDER,refresh=bool(arguments.REFRESH), resultssize= int(arguments.SIZE))
+        else:
+            return ""
 
         return ""
 
-    def list(self,order='price', resultssize=50, refresh=False, printit = True):
+    def list(self,order='price', resultssize=25, refresh=False, printit = True):
 
         #check to make sure that order is either price, cores, or memory
         if order not in ['price', 'cores', 'memory']:
@@ -163,7 +179,7 @@ class FrugalCommand(PluginCommand):
         flavorframe = flavorframe[flavorframe['provider'].isin(keysya)]
         Console.msg(f"Showing top 5 options, booting first option now...")
         converted = flavorframe.head(5).to_dict('records')
-        Console.msg(Printer.write(converted))
+        print(Printer.write(converted))
         cheapest = converted[0]
         var_list = Variables(filename="~/.cloudmesh/var-data")
         var_list['cloud'] = cheapest['provider']
@@ -179,6 +195,13 @@ class FrugalCommand(PluginCommand):
 
         # prepare command to run the file
         vmcom = VmCommand()
+        try:
+            Console.msg('waiting for vm to be reachable...')
+            Console.msg('wait')
+            vmcom.do_vm('wait')
+        except:
+            Console.msg('could not reach vm for benchmark')
+
         try:
             Console.msg(f'moving benchmark file to vm...')
             Console.msg(f'put ' + filepath + ' /home/ubuntu')

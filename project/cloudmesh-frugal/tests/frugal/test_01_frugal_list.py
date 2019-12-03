@@ -22,6 +22,11 @@ class TestFrugalList:
         Benchmark.Stop()
 
         cm = CmDatabase()
+
+        # shoudl we have frugal beeing first??? gregor is not sure
+        # is is asw-frugal or frugal-aws based on local-key it may be
+        # frugal second just as you have.
+
         assert cm.collection('aws-frugal').estimated_document_count() > 0
         assert cm.collection('gcp-frugal').estimated_document_count() > 0
         assert cm.collection('azure-frugal').estimated_document_count() > 0
@@ -44,11 +49,18 @@ class TestFrugalList:
         HEADING()
 
         Benchmark.Start()
-        result = Shell.execute("cms frugal --order=memory", shell=True)
+        result = Shell.execute("cms frugal list --order=memory", shell=True)
         Benchmark.Stop()
 
         VERBOSE('frugal list order complete')
         VERBOSE(result)
+
+    # comparision between differnt clouds missing. introduce a new test 03 in
+    # which you measure for each cloud you supportedthe benchmark and compare with a fgrep script
+
+
+    # list: is there a --refresh, e.g. you go out find first the data add it to the db and than
+    # compare it with hwhat you have in the db
 
     def test_benchmark(self):
         Benchmark.print()

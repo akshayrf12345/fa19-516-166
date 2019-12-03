@@ -35,5 +35,9 @@ class TestFrugalBoot:
         VERBOSE('frugal benchmark complete complete')
         VERBOSE(result)
 
+    # storing benchmark in db and retrieving it is missing, contrast this to get
+    # it from cloud vs get it from db
+
+
     def test_benchmark(self):
         Benchmark.print()

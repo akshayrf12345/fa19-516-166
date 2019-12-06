@@ -8,6 +8,12 @@ brfunk@iu.edu
 
 [Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
 
+:o2: see the report.md file for others, they have links that you need to include 
+
+:o2: pointer to code missing
+
+:o2: ref section missing
+
 ## Abstract
 
 Cloudmesh frugal is a cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It compares

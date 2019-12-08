@@ -180,5 +180,7 @@ and benchmark.
 ## References
 
 [Cloudmesh Manual](https://cloudmesh.github.io/cloudmesh-manual/index.html)
+
 [Python for Cloud Computing](https://laszewski.github.io/book/python/)
+
 [Cloud Computing](https://laszewski.github.io/book/cloud/)

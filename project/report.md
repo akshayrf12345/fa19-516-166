@@ -1,4 +1,4 @@
-# Cloudmesh Frugal With AWS, Azure, and Google Cloud
+# Cloudmesh Frugal
 
 Brian Funk
 

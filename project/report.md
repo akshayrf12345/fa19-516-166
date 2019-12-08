@@ -16,9 +16,11 @@ brfunk@iu.edu
 
 ## Abstract
 
-Cloudmesh frugal is a cloudmesh command for comparing the cost of compute for AWS, Azure, and GCP in various regions. It compares
-price relative to the hardware specifications of the machines, an provide the VM with the best value. It has three core commands which
-list, boot, and benchmark the cheapest vm.
+Cloudmesh frugal is a cloudmesh commandline API for comparing the cost of compute for supported compute providers in various regions.
+It compares price relative to the hardware specifications of the machines, an provide the VM with the best value. It has three core
+commands which list, boot, and benchmark the cheapest vm. The current support providers are AWS, and Azure with full support, and GCP 
+with list support only. 
+
 
 ## Introduction
 
@@ -32,31 +34,38 @@ ranked list of flavors across the three compute providers, sorted by value. From
         ::
 
             Usage:
-                frugal list [-refresh] [--order=ORDER] [--size=SIZE]
-                frugal boot [--refresh] [--order=ORDER]
+                frugal list [--benchmark] [--refresh] [--order=ORDER] [--size=SIZE] [--cloud=CLOUD]
+                frugal boot [--refresh] [--order=ORDER] [--cloud=CLOUD]
                 frugal benchmark
 
             Arguments:
               ORDER       sorting hierarchy, either price, cores, or
                           memory
               SIZE        number of results to be printed to the
-                          console
+                          console. Default is 25, can be changed with
+                          cms set frugal.size = SIZE
+              CLOUD       Limits the frugal method to a specific cloud
+                          instead of all supported providers
 
             Options:
                --refresh         forces a refresh on all entries for
-                                 aws, gcp, and azure
+                                 all supported providers
                --order=ORDER     sets the sorting on the results list
                --size=SIZE       sets the number of results returned
                                  to the console
+               --benchmark       prints the benchmark results instead
+                                 of flavors
 
             Description:
                 frugal list
                     lists cheapest flavors for aws, azure, and gcp
-                    in a sorted table
+                    in a sorted table by default, if --benchmark is
+                    used then it lists benchmark results stored in
+                    the db
 
                 frugal boot
                     boots the cheapest bootable vm from the frugal
-                    list. Currently only supports azure and aws
+                    list.
 
                 frugal benchmark
                     executes a benchmarking command on the newest
@@ -66,20 +75,25 @@ ranked list of flavors across the three compute providers, sorted by value. From
 
 
                  cms frugal list --refresh --order=price --size=150
+                 cms frugal list --benchmark
                  cms frugal boot --order=memory
                  cms frugal benchmark
 
                  ...and so on
-                 
+
             Tips:
-                frugal benchmark will stall the command line after 
+                frugal benchmark will stall the command line after
                 the user enters their ssh key. This means the benchmark
                 is running
-                
+
+                frugal benchmark is dependent on the vm put command.
+                this may need to be manually added to the vm command
+                file.
+
 
             Limitations:
 
-                frugal boot and benchmark are not supported for gcp
+                frugal boot and benchmark only work on implemented providers
 
 
 
@@ -107,63 +121,3 @@ of how the command works and interacts with the local db and the internet.
 
 There are two pytest files for frugal, test_01_frugal_list.py and test_02_frugal_boot.py. They collectively test frugal list, boot,
 and benchmark.
-
-## Work Breakdown
-
-### Weekly Work Updates
-
-#### Week of 9/29/19
-
-Cloudmesh not entirely working at this point, began to explore AWS frugal example. Tested some urls to obtain the pricing info
-from GCP and Azure. Needs to be cleaned, and will also likely need to be pushed into mongodb (not running yet). See AWS example. Code 
-so far
-at [frugaltesting.py](https://github.com/cloudmesh-community/fa19-516-166/blob/master/project/frugaltesting.py)
-
-#### Week of 10/6/19
-
-Most of the week was spent getting Cloudmesh to run properly after bouncing back and forth from using Windows to Windows Subsystem.
-Success on Window so will be using that for development entirely. Was able to get Chameleon VM up and running after some trials, so
-which helped in understand of Cloudmesh command flow. No code updates
-
-#### Week of 10/13/19
-
-Currently reading documentation on OPENAPI and thinking about how that service will be integrated in frugal project.
-Updated report with all new progress, and Google pricing is completed in
-[frugaltesting.py](https://github.com/cloudmesh-community/fa19-516-166/blob/master/project/frugaltesting.py), and it is done without
-using the API. It uses a simplified JSON from their calculator. The file is parsed into the general structure that will be used for
-benchmarking, a 2d numpy array with features [provider, machine name, region, cores, memory, and price]. Next up will be doing the
-same with Azure.
-
-#### Week of 10/20/19
-
-Azure is complete as well, read into same template as GCP. Started Mongo as well but ran into issue with YAML file for the MODE of
-the Mongo - ended the week...
-
-#### Week of 10/27/19
-
-Amazon info connected from Mongo, is now parsed into matrix. going to start working on Mongo refresh checks/downloads
-
-#### Week of 11/03/19
-
-Prep for demo at end of week with Gregor. Started to actually pull everything together. Flipped the frugal testing file into an
-base class with a list method. Now have separate frugal files for aws, gcp, and azure that return a price matrix for each one. Built
-in logic for it to save back to the db, as well as an argument for a refresh. Wrapping up integration for it to be called from
-the cloudmesh console. Console implementation completed. All that is left is frugal boot, which will require some checks
-
-#### Week of 11/10/19
-
-Was not able to make too much progress this week because of other assignments. Frugal boot now has a command line interface. For now
-it doesn't boot anything, but I worked on logic so that it filters the table to providers that can actually be booted. For now this
-is only AWS but it should work with Azure once I incorporate a few more things. Otherwise I am now looking at the cloudmesh code to
-figure out what information I need to boot a vm. Hope to have all of that done by the end of next week so I can begin to add tests.
-
-#### Week of 11/17/19
-
-Resolved an issue with not being able to boot up aws vms, which was hindering the frugal boot code. Now frugal boot works with aws,
-and the structure is there for it to work with azure with a few tweaks. Currently having a few issues with getting an azure vm up
-and running, but I'll try to figure that out during class time this week. After that I'll get Azure running and then start working
-on PyTests and documentation. Hope to have that all done by the end of the weekend to give time to check over things
-
-#### Week of 11/24/19
-
-Completed Azure boot and frugal benchmark. Finalized documentation of code. Added pytests

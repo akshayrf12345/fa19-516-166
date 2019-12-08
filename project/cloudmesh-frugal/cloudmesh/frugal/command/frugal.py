@@ -31,7 +31,10 @@ class FrugalCommand(PluginCommand):
               ORDER       sorting hierarchy, either price, cores, or
                           memory
               SIZE        number of results to be printed to the
-                          console
+                          console. Default is 25, can be changed with
+                          cms set frugal.size = SIZE
+              CLOUD       Limits the frugal method to a specific cloud
+                          instead of all supported providers
 
             Options:
                --refresh         forces a refresh on all entries for
@@ -45,11 +48,13 @@ class FrugalCommand(PluginCommand):
             Description:
                 frugal list
                     lists cheapest flavors for aws, azure, and gcp
-                    in a sorted table
+                    in a sorted table by default, if --benchmark is
+                    used then it lists benchmark results stored in
+                    the db
 
                 frugal boot
                     boots the cheapest bootable vm from the frugal
-                    list. Currently only supports azure and aws
+                    list.
 
                 frugal benchmark
                     executes a benchmarking command on the newest
@@ -59,6 +64,7 @@ class FrugalCommand(PluginCommand):
 
 
                  cms frugal list --refresh --order=price --size=150
+                 cms frugal list --benchmark
                  cms frugal boot --order=memory
                  cms frugal benchmark
 
@@ -69,10 +75,14 @@ class FrugalCommand(PluginCommand):
                 the user enters their ssh key. This means the benchmark
                 is running
 
+                frugal benchmark is dependent on the vm put command.
+                this may need to be manually added to the vm command
+                file.
+
 
             Limitations:
 
-                frugal boot and benchmark are not supported for gcp
+                frugal boot and benchmark only work on implemented providers
 
 
 
@@ -82,6 +92,9 @@ class FrugalCommand(PluginCommand):
         arguments.ORDER = arguments['--order'] or None
         arguments.BENCHMARK = arguments['--benchmark'] or None
         arguments.CLOUD = arguments['--cloud'] or None
+
+        var_list = Variables(filename="~/.cloudmesh/var-data")
+        var_size = var_list['frugal.size']
 
         if arguments.ORDER is None:
             arguments.ORDER='price'
@@ -97,7 +110,7 @@ class FrugalCommand(PluginCommand):
             arguments.BENCHMARK=True
 
         if arguments.SIZE is None:
-            arguments.SIZE=25
+            arguments.SIZE=var_size
 
 
         if arguments.list:

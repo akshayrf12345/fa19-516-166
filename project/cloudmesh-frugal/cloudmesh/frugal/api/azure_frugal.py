@@ -108,7 +108,7 @@ def get_azure_pricing(refresh = False):
         try:
             found = modoffers[search]
         except:
-            print('machine match failure on ' + search)
+            #print('machine match failure on ' + search)
             continue
         #now to fit it into the frame
         azure_list.append(np.array(['azure', flavor['name'], region, found['cores'], found['ram'], found['prices']['perhour'][priceregion]['value']]))

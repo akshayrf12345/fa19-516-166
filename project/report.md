@@ -8,25 +8,11 @@ brfunk@iu.edu
 
 [Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
 
+[CODE] (https://github.com/cloudmesh/cloudmesh-frugal)
+
 :o2: see the report.md file for others, they have links that you need to include 
 
-:o2: pointer to code missing
-
 :o2: ref section missing
-
-## Abstract
-
-Cloudmesh frugal is a cloudmesh commandline API for comparing the cost of compute for supported compute providers in various regions.
-It compares price relative to the hardware specifications of the machines, an provide the VM with the best value. It has three core
-commands which list, boot, and benchmark the cheapest vm. The current support providers are AWS, and Azure with full support, and GCP 
-with list support only. 
-
-
-## Introduction
-
-Cloudmesh frugal collects pricing information on all of the availble flavors for AWS, GCP, and Azure. Those prices are then
-compared to the physical specifications of the machine, which are then compared with each other. The core component of frugal is a
-ranked list of flavors across the three compute providers, sorted by value. From this list, vms can be booted, and then benchmarked. 
 
 ## Usage
 
@@ -40,9 +26,9 @@ ranked list of flavors across the three compute providers, sorted by value. From
 
             Arguments:
               ORDER       sorting hierarchy, either price, cores, or
-                          memory
+                          memory. DEFAULT = price
               SIZE        number of results to be printed to the
-                          console. Default is 25, can be changed with
+                          console. DEFAULT = 25, and can be changed with
                           cms set frugal.size = SIZE
               CLOUD       Limits the frugal method to a specific cloud
                           instead of all supported providers
@@ -98,6 +84,77 @@ ranked list of flavors across the three compute providers, sorted by value. From
 
 
         """
+        
+## Notes
+
+### Installation
+
+Cloudmesh frugal can be installed with cloudmesh and the following commands
+
+```
+cd cloudmesh-frugal
+
+python setup.py install
+
+pip install .
+```
+
+### vm put Command
+
+Frugal benchmark is dependent on the vm put command, which needs to be appended to cloud/cloudmesh/vm/command/vm.py. The method is:
+```
+       elif arguments.put:
+            """
+            vm put SOURCE DESTINATION
+            """
+            clouds, names, command = Arguments.get_commands("ssh",
+                                                            arguments,
+                                                            variables)
+
+            key = variables['key']
+
+            source = arguments['SOURCE']
+            destination = arguments['DESTINATION']
+            for cloud in clouds:
+                #p = Provider(cloud)
+                cm = CmDatabase()
+                for name in names:
+                    try:
+                        vms = cm.find_name(name, "vm")
+                    except IndexError:
+                        Console.error(f"could not find vm {name}")
+                        return ""
+                    # VERBOSE(vm)
+                    for vm in vms:
+                        ip = vm['public_ips']
+
+                        #get the username
+                        try:
+                            user = vm['username']
+                        except:
+                            #username not in vm...guessing
+                            imagename = list(cm.collection(cloud+'-image').find({'ImageId' : vm['ImageId']}))[0]['name']
+                            user = Image.guess_username(image=imagename,cloud=cloud)
+                        cmd = f'scp -i {key} {source} {user}@{ip}:{destination}'
+                        print(cmd)
+                        os.system(cmd)
+            return ""
+```
+
+## Abstract
+
+Cloudmesh frugal is a cloudmesh commandline API for comparing the cost of compute for supported compute providers in various regions.
+It compares price relative to the hardware specifications of the machines, an provide the VM with the best value. It has three core
+commands which list, boot, and benchmark the cheapest vm. The current support providers are AWS, and Azure with full support, and GCP 
+with list support only. 
+
+
+## Introduction
+
+Cloudmesh frugal collects pricing information on all of the availble flavors for AWS, GCP, and Azure. Those prices are then
+compared to the physical specifications of the machine, which are then compared with each other. The core component of frugal is a
+ranked list of flavors across the three compute providers, sorted by value. From this list, vms can be booted, and then benchmarked. 
+
 
 ## Design
 

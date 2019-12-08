@@ -10,7 +10,9 @@ brfunk@iu.edu
 
 [Insights](https://github.com/cloudmesh-community/fa19-516-166/pulse)
 
-[CODE REPO](https://github.com/cloudmesh/cloudmesh-frugal)
+### Code Repository
+
+[CODE REPOSITORY](https://github.com/cloudmesh/cloudmesh-frugal)
 
 ## Usage
 

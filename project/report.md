@@ -8,11 +8,9 @@ brfunk@iu.edu
 
 [Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
 
-[CODE] (https://github.com/cloudmesh/cloudmesh-frugal)
+[Insights](https://github.com/cloudmesh-community/fa19-516-166/pulse)
 
-:o2: see the report.md file for others, they have links that you need to include 
-
-:o2: ref section missing
+[CODE REPO](https://github.com/cloudmesh/cloudmesh-frugal)
 
 ## Usage
 
@@ -178,3 +176,9 @@ of how the command works and interacts with the local db and the internet.
 
 There are two pytest files for frugal, test_01_frugal_list.py and test_02_frugal_boot.py. They collectively test frugal list, boot,
 and benchmark.
+
+## References
+
+[Cloudmesh Manual](https://cloudmesh.github.io/cloudmesh-manual/index.html)
+[Python for Cloud Computing](https://laszewski.github.io/book/python/)
+[Cloud Computing](https://laszewski.github.io/book/cloud/)

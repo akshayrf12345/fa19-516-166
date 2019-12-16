@@ -1,18 +1,10 @@
 # Cloudmesh Frugal
 
-Brian Funk
+Brian Funk, brfunk@iu.edu, [fa19-516-166](https://github.com/cloudmesh-community/fa19-516-166)
 
-brfunk@iu.edu
-
-[fa19-516-166](https://github.com/cloudmesh-community/fa19-516-166)
-
-[Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
-
-[Insights](https://github.com/cloudmesh-community/fa19-516-166/pulse)
-
-### Code Repository
-
-[CODE REPOSITORY](https://github.com/cloudmesh/cloudmesh-frugal)
+* [Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
+* [Insights](https://github.com/cloudmesh-community/fa19-516-166/pulse)
+* [Code Repository](https://github.com/cloudmesh/cloudmesh-frugal)
 
 ## Usage
 
@@ -139,8 +131,6 @@ and benchmark.
 
 ## References
 
-[Cloudmesh Manual](https://cloudmesh.github.io/cloudmesh-manual/index.html)
-
-[Python for Cloud Computing](https://laszewski.github.io/book/python/)
-
-[Cloud Computing](https://laszewski.github.io/book/cloud/)
+1. [Cloudmesh Manual](https://cloudmesh.github.io/cloudmesh-manual/index.html)
+1. [Python for Cloud Computing](https://laszewski.github.io/book/python/)
+1. [Cloud Computing](https://laszewski.github.io/book/cloud/)

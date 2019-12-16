@@ -76,16 +76,13 @@ Brian Funk, brfunk@iu.edu, [fa19-516-166](https://github.com/cloudmesh-community
 
 Cloudmesh frugal can be installed with cloudmesh and the following commands
 
-```
-source ~/ENV3/bin/activate
-mkdir cm
-cd cm
-pip install cloudmesh-installer
-cloudmesh-installer git clone cloud
-cloudmesh-installer install cloud
-git clone https://github.com/cloudmesh/cloudmesh-frugal
-cd cloudmesh-frugal
-pip install -e .
+```bash
+$ source ~/ENV3/bin/activate
+$ mkdir cm
+$ cd cm
+$ pip install cloudmesh-installer
+$ cloudmesh-installer git clone frugal
+$ cloudmesh-installer install frugal
 ```
 
 ## Abstract

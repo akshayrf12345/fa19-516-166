@@ -8,9 +8,9 @@ Brian Funk, brfunk@iu.edu, [fa19-516-166](https://github.com/cloudmesh-community
 
 ## Usage
 
-        """
-        ::
+:o2 fix indentation
 
+```
             Usage:
                 frugal list [--benchmark] [--refresh] [--order=ORDER] [--size=SIZE] [--cloud=CLOUD]
                 frugal boot [--refresh] [--order=ORDER] [--cloud=CLOUD]
@@ -68,11 +68,8 @@ Brian Funk, brfunk@iu.edu, [fa19-516-166](https://github.com/cloudmesh-community
             Limitations:
 
                 frugal boot and benchmark only work on implemented providers
-
-
-
-        """
-        
+```
+     
 ## Notes
 
 ### Installation

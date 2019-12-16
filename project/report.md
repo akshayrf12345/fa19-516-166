@@ -8,7 +8,7 @@ Brian Funk, brfunk@iu.edu, [fa19-516-166](https://github.com/cloudmesh-community
 
 ## Usage
 
-:o2 fix indentation
+:o2: fix indentation
 
 ```
             Usage:

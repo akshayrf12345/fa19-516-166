@@ -134,9 +134,11 @@ diagram](images/frugal_design.png){#fig:frugal_design}
 
 ## Benchmarks
 
-There are two pytest files for frugal, test_01_frugal_list.py and
-test_02_frugal_boot.py. They collectively test frugal list, boot, and
-benchmark.
+There are three pytest files for frugal, test_01_frugal_list.py,
+test_02_frugal_boot.py, and test_03_frugal_benchmark. They
+collectively test frugal list, boot, and benchmark. The results of this
+benchmark will be linked to once the output file is reduced to a
+manageable file size
 
 ## References
 

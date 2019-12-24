@@ -1,7 +1,5 @@
 # Cloudmesh Frugal
 
-:o2: benchmark results or links to them are missing
-
 Brian Funk, brfunk@iu.edu, [fa19-516-166](https://github.com/cloudmesh-community/fa19-516-166)
 
 * [Contributors](https://github.com/cloudmesh-community/fa19-516-166/graphs/contributors)
